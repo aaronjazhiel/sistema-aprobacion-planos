@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nueva Solicitud de Planos – PAS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #00467f;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+    }
+
+    .form-container {
+      background: white;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 0;
+      color: #00467f;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type="file"] {
+      padding: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #00467f;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00345f;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PAS - Sistema de Aprobación de Planos</h1>
+  </header>
+
+  <div class="form-container">
+    <h2>Nueva Solicitud de Planos</h2>
+    <form action="/enviar-solicitud" method="POST" enctype="multipart/form-data">
+
+      <label for="nombreBuque">Nombre del buque</label>
+      <input type="text" id="nombreBuque" name="nombreBuque" required>
+
+      <label for="imo">Número IMO</label>
+      <input type="text" id="imo" name="imo" required>
+
+      <label for="tipoServicio">Tipo de servicio</label>
+      <select id="tipoServicio" name="tipoServicio" required>
+        <option value="">Seleccione una opción</option>
+        <option value="aprobacion_inicial">Aprobación Inicial</option>
+        <option value="revision_modificacion">Revisión por Modificación</option>
+        <option value="renovacion">Renovación</option>
+      </select>
+
+      <label for="comentarios">Comentarios adicionales</label>
+      <textarea id="comentarios" name="comentarios" rows="4" placeholder="Ingrese detalles relevantes..."></textarea>
+
+      <label for="documentos">Cargar planos en PDF</label>
+      <input type="file" id="documentos" name="documentos[]" accept=".pdf" multiple required>
+
+      <button type="submit">Enviar solicitud</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Autoridad del Canal de Panamá – Arquitectura Naval</p>
+  </footer>
+
+</body>
+</html>

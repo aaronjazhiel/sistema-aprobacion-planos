@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Usuario – PAS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #00467f;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+    }
+
+    .form-container {
+      background: white;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      margin: 0;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #00467f;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00345f;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PAS - Sistema de Aprobación de Planos</h1>
+  </header>
+
+  <div class="form-container">
+    <h2>Registro de Usuario</h2>
+    <form action="/registrar-usuario" method="POST">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="telefono">Teléfono de contacto</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="empresa">Nombre de la empresa</label>
+      <input type="text" id="empresa" name="empresa" required>
+
+      <label for="tipoCliente">Tipo de cliente</label>
+      <select id="tipoCliente" name="tipoCliente" required>
+        <option value="">Seleccione una opción</option>
+        <option value="astillero">Astillero</option>
+        <option value="armador">Armador</option>
+        <option value="operador">Operador</option>
+        <option value="consultor">Consultoría naval</option>
+        <option value="fletador">Fletador</option>
+      </select>
+
+      <label for="contrasena">Contraseña</label>
+      <input type="password" id="contrasena" name="contrasena" required>
+
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Autoridad del Canal de Panamá – Arquitectura Naval</p>
+  </footer>
+
+</body>
+</html>
