@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Trazabilidad de Solicitudes – PAS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #00467f;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 98%;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00467f;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 6px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #00467f;
+      color: white;
+      font-size: 13px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #eef7ff;
+    }
+
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+
+    .alerta {
+      color: red;
+      font-weight: bold;
+    }
+
+    .btn-seguimiento, .btn-editar {
+      background-color: #007acc;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 2px;
+    }
+
+    .btn-editar {
+      background-color: #ffa500;
+    }
+
+    .btn-seguimiento:hover {
+      background-color: #005a9e;
+    }
+
+    .btn-editar:hover {
+      background-color: #cc8500;
+    }
+
+    .icono-pdf {
+      font-size: 16px;
+      color: red;
+    }
+
+    .icono-mail {
+      font-size: 16px;
+      color: #00467f;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PAS - Sistema de Aprobación de Planos</h1>
+  </header>
+
+  <div class="container">
+    <h2>Panel de Trazabilidad de Solicitudes</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>✔</th>
+          <th>FECHA</th>
+          <th>RECIBO</th>
+          <th>Bank Ref</th>
+          <th>TOTAL PAG</th>
+          <th>Tarifa</th>
+          <th>No. de Caso</th>
+          <th>Cliente</th>
+          <th>Buque</th>
+          <th>Manga</th>
+          <th>Tipo Buque</th>
+          <th>Servicio prestado</th>
+          <th>Fecha servicio</th>
+          <th>FICC recibido</th>
+          <th>Factura</th>
+          <th>Comentarios</th>
+          <th>Tiempo resp.</th>
+          <th>Registro ingreso</th>
+          <th>Segmento</th>
+          <th>Comprobante</th>
+          <th>Email / Adjunto</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>2-May-25</td>
+          <td>206105</td>
+          <td>3251222085</td>
+          <td>12,000.00</td>
+          <td>1088.IPL1</td>
+          <td>206198</td>
+          <td>HYUNDAI CO. LTD.</td>
+          <td>Hulls 8254/55</td>
+          <td>46.4</td>
+          <td>LNG Carrier</td>
+          <td>Sí</td>
+          <td>7-May-25</td>
+          <td>28-May-25</td>
+          <td>9153057</td>
+          <td>EL SERVICIO FUE PRESTADO</td>
+          <td>2 días</td>
+          <td>FICC-ACP-AR-#5137</td>
+          <td>LNG Carrier</td>
+          <td><span class="icono-pdf">📄</span></td>
+          <td><span class="icono-mail">📎</span></td>
+          <td>
+            <button class="btn-seguimiento">Seguimiento</button>
+            <button class="btn-editar">Editar</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>12-May-25</td>
+          <td>206105</td>
+          <td>3251242151</td>
+          <td>2,000.00</td>
+          <td>1088.IPL3</td>
+          <td>206208</td>
+          <td>SAMSUNG H.I.</td>
+          <td>Hull 0020</td>
+          <td>43.0</td>
+          <td>Crude Tanker</td>
+          <td class="alerta">No</td>
+          <td>-</td>
+          <td>-</td>
+          <td>--</td>
+          <td class="alerta">CONFIRMAR SERVICIO</td>
+          <td>5 días</td>
+          <td>FICC-ACP-AR-#5137</td>
+          <td>Crude Tankers</td>
+          <td><span class="icono-pdf">📄</span></td>
+          <td><span class="icono-mail">📎</span></td>
+          <td>
+            <button class="btn-seguimiento">Seguimiento</button>
+            <button class="btn-editar">Editar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Autoridad del Canal de Panamá – Arquitectura Naval</p>
+  </footer>
+
+</body>
+</html>
