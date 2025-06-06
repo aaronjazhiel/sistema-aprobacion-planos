@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro Paso a Paso – PAS</title>
+  <style>
+    body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 0; }
+    header, footer {
+      background-color: #00467f; color: white; padding: 15px 30px; text-align: center;
+    }
+    .container {
+      max-width: 800px; margin: 30px auto; background: white; padding: 25px;
+      border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2, h3 { color: #00467f; }
+    .step { display: none; }
+    .step.active { display: block; }
+    input, select, textarea {
+      width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px;
+    }
+    .btn {
+      background-color: #007acc; color: white; padding: 10px 20px; border: none;
+      border-radius: 4px; cursor: pointer; margin: 10px 5px;
+    }
+    .btn:hover { background-color: #005a9e; }
+    .btn-group { text-align: right; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PAS - Sistema de Aprobación de Planos</h1>
+</header>
+
+<div class="container">
+  <h2>Solicitud Paso a Paso</h2>
+
+  <form id="solicitudForm">
+    <!-- Etapa 1 -->
+    <div class="step active">
+      <h3>1. Datos del Cliente</h3>
+      <input type="text" placeholder="Nombre completo del cliente" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <input type="text" placeholder="Teléfono de contacto">
+      <textarea placeholder="Observaciones adicionales (opcional)"></textarea>
+      <div class="btn-group">
+        <button type="button" class="btn" onclick="nextStep()">Siguiente</button>
+      </div>
+    </div>
+
+    <!-- Etapa 2 -->
+    <div class="step">
+      <h3>2. Datos del Buque</h3>
+      <input type="text" placeholder="Nombre del buque" required>
+      <input type="text" placeholder="Hull number / IMO" required>
+      <input type="number" placeholder="Manga (m)" step="0.01">
+      <select required>
+        <option disabled selected>Selecciona tipo de servicio</option>
+        <option value="IPL1">1088.IPL1</option>
+        <option value="IPL3">1088.IPL3</option>
+        <option value="IPL4">1088.IPL4</option>
+      </select>
+      <div class="btn-group">
+        <button type="button" class="btn" onclick="prevStep()">Anterior</button>
+        <button type="button" class="btn" onclick="nextStep()">Siguiente</button>
+      </div>
+    </div>
+
+    <!-- Etapa 3 -->
+    <div class="step">
+      <h3>3. Adjuntar Planos PDF</h3>
+      <input type="file" accept=".pdf" required>
+      <label>¿Desea agregar algún aviso de navegación (Notice to Shipping)?</label>
+      <input type="file" accept=".pdf">
+      <div class="btn-group">
+        <button type="button" class="btn" onclick="prevStep()">Anterior</button>
+        <button type="button" class="btn" onclick="nextStep()">Siguiente</button>
+      </div>
+    </div>
+
+    <!-- Etapa 4 -->
+    <div class="step">
+      <h3>4. Comprobante de Pago</h3>
+      <input type="file" accept=".pdf,.jpg,.png" required>
+      <input type="text" placeholder="Referencia bancaria del pago" required>
+      <input type="text" placeholder="Número de caso (si lo tiene)">
+      <div class="btn-group">
+        <button type="button" class="btn" onclick="prevStep()">Anterior</button>
+        <button type="button" class="btn" onclick="nextStep()">Siguiente</button>
+      </div>
+    </div>
+
+    <!-- Etapa 5 -->
+    <div class="step">
+      <h3>5. Confirmación</h3>
+      <p>Revise que todos los datos estén correctos antes de enviar su solicitud.</p>
+      <div class="btn-group">
+        <button type="button" class="btn" onclick="prevStep()">Anterior</button>
+        <button type="submit" class="btn">Enviar Solicitud</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<footer>
+  <p>&copy; 2025 Autoridad del Canal de Panamá – Arquitectura Naval</p>
+</footer>
+
+<script>
+  let step = 0;
+  const steps = document.querySelectorAll('.step');
+
+  function showStep(n) {
+    steps.forEach((s, i) => s.classList.toggle('active', i === n));
+  }
+
+  function nextStep() {
+    if (step < steps.length - 1) step++;
+    showStep(step);
+  }
+
+  function prevStep() {
+    if (step > 0) step--;
+    showStep(step);
+  }
+
+  document.getElementById('solicitudForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('¡Solicitud enviada correctamente!');
+    // Aquí podrías enviar los datos a tu backend o mostrar un resumen
+  });
+</script>
+
+</body>
+</html>
