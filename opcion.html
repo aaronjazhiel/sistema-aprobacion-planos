@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Trazabilidad de Solicitudes – PAS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background-color: #00467f;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+    }
+    .container {
+      max-width: 98%;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #00467f;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 6px;
+      text-align: center;
+    }
+    th {
+      background-color: #00467f;
+      color: white;
+      font-size: 13px;
+    }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+    tr:hover { background-color: #eef7ff; }
+    .highlight { background-color: yellow; font-weight: bold; }
+    .alerta { color: red; font-weight: bold; }
+    .btn-seguimiento, .btn-editar {
+      background-color: #007acc;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 2px;
+    }
+    .btn-editar { background-color: #ffa500; }
+    .btn-seguimiento:hover { background-color: #005a9e; }
+    .btn-editar:hover { background-color: #cc8500; }
+    .icono-pdf { font-size: 16px; color: red; }
+    .icono-mail { font-size: 16px; color: #00467f; }
+
+    #modalEditar {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white;
+      max-width: 800px;
+      margin: 3% auto;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-y: auto;
+      max-height: 90%;
+    }
+    .modal-content h3 { color: #00467f; }
+    .modal-content label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .modal-content input,
+    .modal-content textarea {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    .modal-content button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    .btn-guardar { background-color: #00467f; color: white; }
+    .btn-cancelar { background-color: gray; color: white; }
+
+    .fase-container {
+      max-width: 98%;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .fase-container h3 {
+      color: #00467f;
+      margin-bottom: 15px;
+    }
+    .fases {
+      list-style: none;
+      padding-left: 0;
+      font-size: 14px;
+    }
+    .fases li {
+      margin: 10px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .fases li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PAS - Sistema de Aprobación de Planos</h1>
+  </header>
+  <div class="container">
+    <h2>Panel de Trazabilidad de Solicitudes</h2>
+    <!-- Aquí va la tabla existente -->
+  </div>
+
+  <div class="fase-container">
+    <h3>Flujo de Validación y Pago</h3>
+    <ol class="fases">
+      <li><strong>Fase 4:</strong> Validación de Pagos</li>
+      <li><strong>Fase 5:</strong> Validación de los Planos</li>
+      <li><strong>Fase 6:</strong> Ejecución del Pago</li>
+      <li><strong>Fase 7:</strong> Generación del Comprobante de Pago</li>
+    </ol>
+  </div>
+
+  <!-- Modal de Edición -->
+  <div id="modalEditar">
+    <div class="modal-content">
+      <h3>Editar Registro</h3>
+      <form id="formEditar">
+        <label>Fecha:</label><input type="date" id="fecha">
+        <label>Recibo:</label><input type="text" id="recibo">
+        <label>Bank Ref:</label><input type="text" id="bankRef">
+        <label>Total Pagado:</label><input type="text" id="totalPag">
+        <label>Tarifa:</label><input type="text" id="tarifa">
+        <label>No. de Caso:</label><input type="text" id="caso">
+        <label>Cliente:</label><input type="text" id="cliente">
+        <label>Buque:</label><input type="text" id="buque">
+        <label>Manga:</label><input type="text" id="manga">
+        <label>Tipo Buque:</label><input type="text" id="tipoBuque">
+        <label>Servicio prestado:</label><input type="text" id="servicio">
+        <label>Fecha Servicio:</label><input type="date" id="fechaServicio">
+        <label>FICC recibido:</label><input type="date" id="ficc">
+        <label>Factura:</label><input type="text" id="factura">
+        <label>Comentarios:</label><textarea id="comentarios"></textarea>
+        <label>Tiempo resp.:</label><input type="text" id="tiempoResp">
+        <label>Registro ingreso:</label><input type="text" id="registroIngreso">
+        <label>Segmento:</label><input type="text" id="segmento">
+        <label>Comprobante:</label><input type="text" id="comprobante">
+        <label>Email / Adjunto:</label><input type="text" id="adjunto">
+        <button type="submit" class="btn-guardar">Guardar</button>
+        <button type="button" onclick="cerrarModal()" class="btn-cancelar">Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Autoridad del Canal de Panamá – Arquitectura Naval</p>
+  </footer>
+
+  <script>
+    function cerrarModal() {
+      document.getElementById('modalEditar').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

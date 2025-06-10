@@ -1,9 +1,9 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Plan Approval Request – PAS</title>
+  <title>Solicitud de aprobación de planos – PAS</title>
   <style>
     body {
       font-family: Arial;
@@ -113,64 +113,67 @@
 <body>
 
 <header>
-  <h1>PAS - Plan Approval System</h1>
+  <h1>PAS - Sistema de Aprobación de Planos</h1>
 </header>
 
 <div class="container">
+
+  <!-- Navegación de pasos -->
   <div class="wizard-nav">
     <div class="wizard-active" id="step-nav-0">
       <div class="wizard-step">1</div>
-      <div class="wizard-label">Request Information</div>
+      <div class="wizard-label">Datos de la solicitud</div>
     </div>
     <div id="step-nav-1">
       <div class="wizard-step">2</div>
-      <div class="wizard-label">Vessel Information</div>
+      <div class="wizard-label">Datos del buque</div>
     </div>
     <div id="step-nav-2">
       <div class="wizard-step">3</div>
-      <div class="wizard-label">Additional Documents</div>
+      <div class="wizard-label">Documentos anexos</div>
     </div>
   </div>
 
   <form id="wizardForm">
+    <!-- Paso 1 -->
     <div class="step-content active">
-      <h3>1. Request Submission</h3>
+      <h3>1. Recepción de la Solicitud</h3>
 
-      <label>Vessel Name *</label>
+      <label>Nombre del Buque *</label>
       <input type="text" required>
 
-      <label>Hull Number / IMO *</label>
+      <label>Número de Casco o IMO *</label>
       <input type="text" required>
 
-      <label>Client or Representative Name *</label>
+      <label>Nombre del Cliente o Representante *</label>
       <input type="text" required>
 
-      <label>Email Address *</label>
+      <label>Correo Electrónico *</label>
       <input type="email" required>
 
-      <label>Phone Number</label>
+      <label>Teléfono de contacto</label>
       <input type="text">
 
-      <label>Request Type (if known)</label>
+      <label>Tipo de Trámite (si lo conoce)</label>
       <select>
-        <option disabled selected>Select IPL type</option>
-        <option value="IPL1">IPL1 – New approval</option>
-        <option value="IPL2">IPL2 – Modification</option>
-        <option value="IPL3">IPL3 – Validation</option>
-        <option value="IPL4">IPL4 – Expedited</option>
+        <option disabled selected>Selecciona tipo IPL</option>
+        <option value="IPL1">IPL1 – Nueva aprobación</option>
+        <option value="IPL2">IPL2 – Modificación</option>
+        <option value="IPL3">IPL3 – Validación</option>
+        <option value="IPL4">IPL4 – Expedito</option>
       </select>
 
-      <label>Estimated Arrival Date</label>
+      <label>Fecha Estimada de Arribo</label>
       <input type="date">
 
-      <label>Has the vessel transited before?</label>
+      <label>¿Es un buque nuevo o ya transitó?</label>
       <select>
-        <option disabled selected>Select an option</option>
-        <option value="new">New</option>
-        <option value="transited">Previously Transited</option>
+        <option disabled selected>Selecciona una opción</option>
+        <option value="nuevo">Nuevo</option>
+        <option value="transitado">Ya transitó</option>
       </select>
 
-      <h4>Upload required documents in PDF format</h4>
+      <h4>Subir documentos obligatorios en formato PDF</h4>
       <label>Arrangement of General Plan *</label>
       <input type="file" accept=".pdf" required>
 
@@ -189,62 +192,52 @@
       <label>Visibility Calculations *</label>
       <input type="file" accept=".pdf" required>
 
-      <button type="button" class="btn" onclick="nextStep()">Continue</button>
+      <button type="button" class="btn" onclick="nextStep()">Continuar</button>
     </div>
 
+    <!-- Paso 2 -->
     <div class="step-content">
-      <h3>2. Vessel Information</h3>
-
-      <label>Vessel Name *</label>
+      <h3>2. Datos del Buque</h3>
+      <label>Nombre del Buque *</label>
       <input type="text" required>
 
       <label>Hull Number / IMO *</label>
       <input type="text" required>
 
-      <label>Beam (m)</label>
+      <label>Manga (m)</label>
       <input type="number" step="0.01">
 
-      <label>Market Segment *</label>
+      <label>Segmento de Mercado *</label>
       <select required>
-        <option disabled selected>Select segment</option>
+        <option disabled selected>Selecciona segmento</option>
         <option>LNG Carrier</option>
         <option>Dry Bulk</option>
-        <option>Vehicle Carrier</option>
-        <option>Container Ship</option>
       </select>
 
-      <h4>Additional vessel documentation</h4>
-
-      <label>Formal request letter (if applicable)</label>
-      <input type="file" accept=".pdf">
-
-      <label>Technical specifications document</label>
-      <input type="file" accept=".pdf">
-
-      <label>Basic vessel information document</label>
-      <input type="file" accept=".pdf">
-
-      <button type="button" class="btn btn-secondary" onclick="prevStep()">Back</button>
-      <button type="button" class="btn" onclick="nextStep()">Continue</button>
+      <button type="button" class="btn btn-secondary" onclick="prevStep()">Anterior</button>
+      <button type="button" class="btn" onclick="nextStep()">Continuar</button>
     </div>
 
+    <!-- Paso 3 -->
     <div class="step-content">
-      <h3>3. Additional Documents</h3>
+      <h3>3. Documentos Anexos</h3>
+      <label>Subir Planos (PDF) *</label>
+      <input type="file" accept=".pdf" required>
 
-      <label>Upload Proof of Payment *</label>
+      <label>Subir Comprobante de Pago *</label>
       <input type="file" accept=".pdf,.jpg,.png" required>
 
-      <label>Comments</label>
+      <label>Observaciones</label>
       <textarea></textarea>
 
-      <button type="button" class="btn btn-secondary" onclick="prevStep()">Back</button>
-      <button type="submit" class="btn">Submit Request</button>
+      <button type="button" class="btn btn-secondary" onclick="prevStep()">Anterior</button>
+      <button type="submit" class="btn">Enviar Solicitud</button>
     </div>
   </form>
 </div>
 
 <footer>
-  <p>&copy; 2025 Panama Canal Authority – Naval Architecture</p>
+  <p>&copy; 2025 Autoridad del Canal de Panamá – Arquitectura Naval</p>
 </footer>
 
 <script>
@@ -269,7 +262,7 @@
 
   document.getElementById('wizardForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    alert("✅ Request submitted successfully.");
+    alert("✅ Solicitud enviada correctamente.");
   });
 
   showStep(current);

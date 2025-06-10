@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clerk Review – PAS</title>
+  <style>
+    body { font-family: Arial; margin: 0; background: #f4f4f4; }
+    header, footer {
+      background-color: #00467f; color: white; text-align: center; padding: 12px;
+    }
+    .container {
+      max-width: 900px; margin: 30px auto; background: white;
+      padding: 25px; border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 { color: #00467f; }
+    label { font-weight: bold; display: block; margin-top: 10px; }
+    input, select, textarea {
+      width: 100%; padding: 8px; margin: 5px 0 15px;
+      border: 1px solid #ccc; border-radius: 4px;
+    }
+    .doc-link { margin-bottom: 10px; display: block; color: #007acc; }
+    .btn {
+      background-color: #00467f; color: white; padding: 10px 20px;
+      border: none; border-radius: 5px; cursor: pointer;
+      margin-right: 10px;
+    }
+    .btn-secondary { background-color: #999; }
+    .btn:hover { background-color: #002f5f; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PAS – Preliminary Review by Clerk</h1>
+</header>
+
+<div class="container">
+  <h2>Request Summary</h2>
+
+  <label>Client Name:</label>
+  <input type="text" value="John Doe" disabled>
+
+  <label>Email:</label>
+  <input type="email" value="johndoe@example.com" disabled>
+
+  <label>Vessel Name:</label>
+  <input type="text" value="MV Example" disabled>
+
+  <label>IMO / Hull Number:</label>
+  <input type="text" value="1234567" disabled>
+
+  <label>Market Segment:</label>
+  <input type="text" value="LNG Carrier" disabled>
+
+  <label>Arrival Date:</label>
+  <input type="date" value="2025-10-15" disabled>
+
+  <h3>Uploaded Documents</h3>
+  <a class="doc-link" href="#">📄 Arrangement of General Plan</a>
+  <a class="doc-link" href="#">📄 Mooring Arrangement</a>
+  <a class="doc-link" href="#">📄 Visibility Calculations</a>
+
+  <label>Clerk Observations:</label>
+  <textarea rows="5" placeholder="Enter observations here..."></textarea>
+
+  <button class="btn">Forward to Naval Architect</button>
+  <button class="btn btn-secondary">Request Correction from Client</button>
+</div>
+
+<footer>
+  <p>&copy; 2025 Panama Canal Authority – Naval Architecture</p>
+</footer>
+
+</body>
+</html>

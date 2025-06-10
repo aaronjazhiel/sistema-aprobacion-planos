@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Architect Dashboard – PAS</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+    header, footer {
+      background-color: #00467f; color: white; text-align: center; padding: 12px;
+    }
+    .container {
+      max-width: 1000px; margin: 30px auto; background: white;
+      padding: 25px; border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%; border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px; text-align: center;
+    }
+    th {
+      background-color: #00467f; color: white;
+    }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+    .btn-view {
+      background-color: #007acc; color: white;
+      padding: 5px 10px; border: none;
+      border-radius: 4px; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PAS – Naval Architect Review Dashboard</h1>
+</header>
+
+<div class="container">
+  <h2>Requests in Review Status</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Case ID</th>
+        <th>Client</th>
+        <th>Vessel</th>
+        <th>IMO</th>
+        <th>Date</th>
+        <th>Reviewed by</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td>CASE-01001</td><td>Client 1</td><td>Vessel 1</td><td>IMO-2234560</td><td>2025-10-5</td><td>Clerk 1</td><td>Review</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-01002</td><td>Client 2</td><td>Vessel 2</td><td>IMO-2234561</td><td>2025-10-6</td><td>Clerk 2</td><td>Review</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-01003</td><td>Client 3</td><td>Vessel 3</td><td>IMO-2234562</td><td>2025-10-7</td><td>Clerk 3</td><td>Review</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-01004</td><td>Client 4</td><td>Vessel 4</td><td>IMO-2234563</td><td>2025-10-8</td><td>Clerk 4</td><td>Review</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-01005</td><td>Client 5</td><td>Vessel 5</td><td>IMO-2234564</td><td>2025-10-9</td><td>Clerk 5</td><td>Review</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-01006</td><td>Client 6</td><td>Vessel 6</td><td>IMO-2234565</td><td>2025-10-10</td><td>Clerk 6</td><td>Review</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-01007</td><td>Client 7</td><td>Vessel 7</td><td>IMO-2234566</td><td>2025-10-11</td><td>Clerk 7</td><td>Review</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-01008</td><td>Client 8</td><td>Vessel 8</td><td>IMO-2234567</td><td>2025-10-12</td><td>Clerk 8</td><td>Review</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-01009</td><td>Client 9</td><td>Vessel 9</td><td>IMO-2234568</td><td>2025-10-13</td><td>Clerk 9</td><td>Review</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-01010</td><td>Client 10</td><td>Vessel 10</td><td>IMO-2234569</td><td>2025-10-14</td><td>Clerk 10</td><td>Review</td><td><button class='btn-view'>View</button></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  <p>&copy; 2025 Panama Canal Authority – Naval Architecture Office</p>
+</footer>
+
+</body>
+</html>

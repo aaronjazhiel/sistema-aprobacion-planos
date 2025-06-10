@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clerk Dashboard – PAS</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+    header, footer {
+      background-color: #00467f; color: white; text-align: center; padding: 12px;
+    }
+    .container {
+      max-width: 1000px; margin: 30px auto; background: white;
+      padding: 25px; border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%; border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px; text-align: center;
+    }
+    th {
+      background-color: #00467f; color: white;
+    }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+    .btn-view {
+      background-color: #007acc; color: white;
+      padding: 5px 10px; border: none;
+      border-radius: 4px; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PAS – Clerk Request Dashboard</h1>
+</header>
+
+<div class="container">
+  <h2>Requests in Creation Status</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Case ID</th>
+        <th>Client</th>
+        <th>Vessel</th>
+        <th>IMO</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td>CASE-00001</td><td>Client 1</td><td>Vessel 1</td><td>IMO-1234560</td><td>2025-10-10</td><td>Creation</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-00002</td><td>Client 2</td><td>Vessel 2</td><td>IMO-1234561</td><td>2025-10-11</td><td>Creation</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-00003</td><td>Client 3</td><td>Vessel 3</td><td>IMO-1234562</td><td>2025-10-12</td><td>Creation</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-00004</td><td>Client 4</td><td>Vessel 4</td><td>IMO-1234563</td><td>2025-10-13</td><td>Creation</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-00005</td><td>Client 5</td><td>Vessel 5</td><td>IMO-1234564</td><td>2025-10-14</td><td>Creation</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-00006</td><td>Client 6</td><td>Vessel 6</td><td>IMO-1234565</td><td>2025-10-15</td><td>Creation</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-00007</td><td>Client 7</td><td>Vessel 7</td><td>IMO-1234566</td><td>2025-10-16</td><td>Creation</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-00008</td><td>Client 8</td><td>Vessel 8</td><td>IMO-1234567</td><td>2025-10-17</td><td>Creation</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-00009</td><td>Client 9</td><td>Vessel 9</td><td>IMO-1234568</td><td>2025-10-18</td><td>Creation</td><td><button class='btn-view'>View</button></td></tr>
+<tr><td>CASE-00010</td><td>Client 10</td><td>Vessel 10</td><td>IMO-1234569</td><td>2025-10-19</td><td>Creation</td><td><button class='btn-view'>View</button></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  <p>&copy; 2025 Panama Canal Authority – Naval Architecture Office</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Architect Review – PAS</title>
+  <style>
+    body { font-family: Arial; margin: 0; background: #f4f4f4; }
+    header, footer {
+      background-color: #00467f; color: white; text-align: center; padding: 12px;
+    }
+    .container {
+      max-width: 900px; margin: 30px auto; background: white;
+      padding: 25px; border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 { color: #00467f; }
+    label { font-weight: bold; display: block; margin-top: 10px; }
+    input, select, textarea {
+      width: 100%; padding: 8px; margin: 5px 0 15px;
+      border: 1px solid #ccc; border-radius: 4px;
+    }
+    .doc-link { margin-bottom: 10px; display: block; color: #007acc; }
+    .btn {
+      background-color: #00467f; color: white; padding: 10px 20px;
+      border: none; border-radius: 5px; cursor: pointer;
+      margin-right: 10px;
+    }
+    .btn-secondary { background-color: #999; }
+    .btn:hover { background-color: #002f5f; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PAS – Review by Naval Architect</h1>
+</header>
+
+<div class="container">
+  <h2>Review Assigned Case</h2>
+
+  <label>Case Number:</label>
+  <input type="text" value="CASE-2025-00123" disabled>
+
+  <label>Client:</label>
+  <input type="text" value="John Doe" disabled>
+
+  <label>Vessel:</label>
+  <input type="text" value="MV Example / IMO 1234567" disabled>
+
+  <h3>Documents for Review</h3>
+  <a class="doc-link" href="#">📄 Arrangement of General Plan</a>
+  <a class="doc-link" href="#">📄 Mooring Arrangement</a>
+  <a class="doc-link" href="#">📄 Technical Characteristics</a>
+
+  <label>Technical Observations:</label>
+  <textarea rows="5" placeholder="Write observations, if any..."></textarea>
+
+  <button class="btn">Approve and Apply Seal</button>
+  <button class="btn btn-secondary">Reject with Comments</button>
+</div>
+
+<footer>
+  <p>&copy; 2025 Panama Canal Authority – Naval Architecture</p>
+</footer>
+
+</body>
+</html>
